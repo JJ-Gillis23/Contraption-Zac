@@ -1,4 +1,4 @@
-# Contraption Zac (2D Platformer Rebuild: First 10 Levels) 
+# Contraption ZacK (2D Platformer Rebuild: First 10 Levels) 
 
 ## Overview
 As part of a software engineering project stduents recreated the first 10 levels of the online game Contraption Za.c The goal of this project was to recreate the mechanics and feel of a 3D platformer experience in a 2D environment while working collaboratively as a team of three students.
