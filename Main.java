@@ -25,7 +25,8 @@ public class Main extends Application
    StackPane sp = new StackPane();
    GridPane gp = new GridPane(); 
    Canvas theCanvas = new Canvas(1368,768);
-   GraphicsContext gc = theCanvas.getGraphicsContext2D(); 
+   GraphicsContext gc = theCanvas.getGraphicsContext2D();
+   Image menuBackground = new Image("Contraption Zack.jpg"); 
    ArrayList<Object> saveList = new ArrayList<Object>();
    ArrayList<ArrayList<AbstractMech>> mechs = new ArrayList<ArrayList<AbstractMech>>();
    //this doesn't need to be saved because it is only on one level
@@ -190,8 +191,6 @@ public class Main extends Application
       menu.setOnAction(new ComboBoxListener());
       sp.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
          sp.setPrefSize(100,30);
-         Label label2 = new Label("Welcome to MoodTraption Zac         Please press H to Start          START             LOAD");
-          sp.getChildren().add(label2);
       sp.getChildren().add(theCanvas);
       sp.getChildren().add(gp);
       gp.getChildren().add(menu);
@@ -211,6 +210,26 @@ public class Main extends Application
       gc.setFill(Color.BLACK);
       gc.fillRect(0,0,theCanvas.getWidth(),theCanvas.getHeight());   
    }
+      public void drawMenu()
+      {
+          gc.clearRect(0, 0, theCanvas.getWidth(), theCanvas.getHeight());
+      
+          // Draw the background image stretched to fit screen
+          gc.drawImage(menuBackground, 0, 0, theCanvas.getWidth(), theCanvas.getHeight());
+      
+          // Set font and color for the label
+          gc.setFill(Color.WHITE); // or Color.BLACK depending on background
+          gc.setFont(Font.font("Dialog", FontWeight.BOLD,48)); // big text
+          
+      
+          String text = "Press H to Start";
+      
+          // Center the text on screen
+          double x = theCanvas.getWidth() - 500; // adjust offset if needed
+          double y = theCanvas.getHeight() - 20;
+      
+          gc.fillText(text, x, y);
+      }
    public void loadReader()
    {
       try
@@ -593,6 +612,10 @@ public class Main extends Application
    {
       public void handle(long currentTimeInNanoSeconds) 
       {
+         if(start ==false)
+         {
+            drawMenu();
+         }
          if(start == true)
          {
             drawItems();
