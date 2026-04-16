@@ -44,4 +44,6 @@ This game was developed in a team of 3 students as part of a software engineerin
 - Collaborated on debugging and integrating features across the team
 
 ---
+<img width="825" height="823" alt="image" src="https://github.com/user-attachments/assets/1f76d1aa-f21a-4b39-875e-454dad484051" />
+
 
